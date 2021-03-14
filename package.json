@@ -1,4 +1,6 @@
 {
+    "name": "ut-developer-test",
+    "version": "1.0.0",
     "private": true,
     "scripts": {
         "dev": "npm run development",
@@ -7,7 +9,12 @@
         "watch-poll": "mix watch -- --watch-options-poll=1000",
         "hot": "mix watch --hot",
         "prod": "npm run production",
-        "production": "mix --production"
+        "production": "mix --production",
+        "docker-login-aws": "aws ecr get-login-password --region eu-west-2 | docker login --username AWS --password-stdin 267585271655.dkr.ecr.eu-west-2.amazonaws.com",
+        "build": "docker build -t ut-developer-test .",
+        "tag": "docker tag ut-developer-test:latest 267585271655.dkr.ecr.eu-west-2.amazonaws.com/ut-developer-test:latest",
+        "push": "docker push 267585271655.dkr.ecr.eu-west-2.amazonaws.com/ut-developer-test:latest",
+        "aws-ecs-update-service": "aws ecs update-service --cluster arn:aws:ecs:eu-west-2:267585271655:cluster/ut-developer-test-cluster --service arn:aws:ecs:eu-west-2:267585271655:service/ut-developer-test-cluster/ut-developer-test-service --force-new-deployment --region eu-west-2"
     },
     "devDependencies": {
         "axios": "^0.21",
