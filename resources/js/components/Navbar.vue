@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
     <router-link :to="{ name: 'home' }" class="navbar-brand">
-      Laravel-Vue SPA
+      Flosso
     </router-link>
     <button
       class="navbar-toggler"
@@ -31,10 +31,7 @@ export default {
     return {
       items: [{
         name: 'home',
-        text: 'Home'
-      }, {
-        name: 'about',
-        text: 'About'
+        text: 'T-Shirt'
       }]
     }
   },

@@ -6,6 +6,7 @@
     "eslint:recommended"
   ],
   "globals": {
+    "axios": true,
     "require": true,
     "Vue": true,
     "window": true
